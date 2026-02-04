@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.0.15'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "net.serenity-bdd:serenity-core:4.0.15"
+    testImplementation "net.serenity-bdd:serenity-cucumber:4.0.15"
+    testImplementation "net.serenity-bdd:serenity-rest-assured:4.0.15"
+    testImplementation "org.slf4j:slf4j-simple:2.0.9"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.15.2"
+    testImplementation "junit:junit:4.13.2"
+    implementation "org.seleniumhq.selenium:selenium-java:4.40.0"
+    implementation "net.serenity-bdd:serenity-junit:4.0.15"
+}
+
+test {
+    testLogging.showStandardStreams = true
+}
+
+// Generates the final HTML report after tests finish
+test.finalizedBy(aggregate)
