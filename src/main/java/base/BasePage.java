@@ -80,6 +80,7 @@ public class BasePage extends PageObject {
         return waitFor(getElement(locator)).getText();
     }
 
+    //Moving the element
     public void moveToElement(String locator) {
 
         WebElement element = getElement(locator);
