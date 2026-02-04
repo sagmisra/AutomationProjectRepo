@@ -82,6 +82,7 @@ public class BasePage extends PageObject {
 
     public void moveToElement(String locator) {
 
+        //Declaring webelement
         WebElement element = getElement(locator);
         withAction().moveToElement(element).perform();
     }
